@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "153edd3c-3d62-4c5d-b28d-f1f01b22a3d9",
+		"name": "example-rs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10073960"
+	},
+	"item": [
+		{
+			"name": "General rate taxation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"traderId\": 1,\r\n    \"playedAmount\": 500,\r\n    \"odd\": 1.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/taxation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"taxation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "General amount taxation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"traderId\": 1,\r\n    \"playedAmount\": 5,\r\n    \"odd\": 1.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/taxation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"taxation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Winnings rate taxation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"traderId\": 2,\r\n    \"playedAmount\": 500,\r\n    \"odd\": 1.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/taxation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"taxation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Winnings amount taxation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"traderId\": 2,\r\n    \"playedAmount\": 5,\r\n    \"odd\": 1.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/taxation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"taxation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
