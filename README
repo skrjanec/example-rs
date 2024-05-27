@@ -52,4 +52,4 @@ To shut down the example simply stop the processes in the foreground.
 
 3. Testing the application with enclosed postman collection
 
-Import the enclosed postman collection in the root of the project * example-rs.postman_collection.json *.
+Import the enclosed postman collection in the root of the project example-rs.postman_collection.json.
