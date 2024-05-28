@@ -11,6 +11,17 @@ import java.util.Date;
 @Table(name = "data")
 @NamedQueries({ @NamedQuery(name = "Data.findAll", query = "SELECT d " + "FROM Data d") })
 public class Data implements Serializable {
+	
+	public Data() {
+	}
+
+	public Data(String matchId, int marketId, String outcome, String specifiers) {
+		super();
+		this.matchId = matchId;
+		this.marketId = marketId;
+		this.outcome = outcome;
+		this.specifiers = specifiers;
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
