@@ -1,0 +1,11 @@
+kumuluzee:
+  datasources:
+    - jndi-name: jdbc/ExampleDS
+      connection-url: jdbc:postgresql://localhost:5432/example
+      username: postgres
+      password: postgres
+      pool:
+        max-size: 2
+  persistence-units:
+    - name: "example-jpa"
+      continue-on-error: false
