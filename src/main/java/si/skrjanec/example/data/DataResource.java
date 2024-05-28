@@ -1,5 +1,6 @@
 package si.skrjanec.example.data;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -36,7 +37,7 @@ public class DataResource {
 	
 	@POST
 	@Path("process")
-    public Response process() {
+    public Response process() throws FileNotFoundException {
 		dataBean.process();
         return Response.noContent().build();
     }
