@@ -58,3 +58,23 @@ To shut down the example simply stop the processes in the foreground.
 3. Testing the application with enclosed postman collection
 
 Import the enclosed postman collection in the root of the project example-rs.postman_collection.json.
+
+## Answers
+How to speed up writing to DB?
+
+1. Do it in parallel and async for each event. Data acquisition, sorting and
+write. Via queue or some other mechanism.
+
+2. If this data is coming in as a stream. Shouldn't the events already be
+sorted? Maybe not in every case, but in general. What is the maximum amount
+of time an event is expected to arrive? This can help us in setting the wait
+time until events are sorted and written to db.
+
+3. Batch insert (implemented)
+
+4. Combination of all 3. Batch insert per event in parallel based on maximum
+amount of time.
+ 
+MIN, MAX, date of insert
+"2024-05-29 01:31:24.325"
+"2024-05-29 01:32:07.811"

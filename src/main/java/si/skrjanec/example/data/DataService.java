@@ -35,17 +35,20 @@ public class DataService {
 	}
 
 	/*
-	 How to speed up writing to DB?
-
-	 1. Do it in parallel and async for each event. Data acquisition, sorting and
-	 write. Via queue or some other mechanism.
-
-	 2. If this data is coming in as a stream. Shouldn't the events already be
-	 sorted? Maybe not in every case, but in general. What is the maximum amount
-	 of time an event is expected to arrive? This can help us in setting the wait
-	 time until events are sorted and written to db.
-
-	 3. Batch insert (implemented)
+	 * How to speed up writing to DB?
+	 * 
+	 * 1. Do it in parallel and async for each event. Data acquisition, sorting and
+	 * write. Via queue or some other mechanism.
+	 * 
+	 * 2. If this data is coming in as a stream. Shouldn't the events already be
+	 * sorted? Maybe not in every case, but in general. What is the maximum amount
+	 * of time an event is expected to arrive? This can help us in setting the wait
+	 * time until events are sorted and written to db.
+	 * 
+	 * 3. Batch insert (implemented)
+	 * 
+	 * 4. Combination of all 3. Batch insert per event in parallel based on maximum
+	 * amount of time.
 	 */
 	@Transactional
 	public void process() throws FileNotFoundException {
@@ -61,7 +64,7 @@ public class DataService {
 		});
 
 //		System.out.println("sorting time: " + (System.currentTimeMillis() - b1) + " ms");
-		
+
 		// should be done via properties
 		em.unwrap(Session.class).setJdbcBatchSize(100);
 
@@ -95,7 +98,8 @@ public class DataService {
 			while (reader.hasNextLine()) {
 				String line = reader.nextLine().replace("'", "");
 				String[] splitted = line.split("\\|");
-				results.add(new Data(splitted[0], Integer.valueOf(splitted[1]), splitted[2], splitted.length == 4 ? splitted[3] : null));
+				results.add(new Data(splitted[0], Integer.valueOf(splitted[1]), splitted[2],
+						splitted.length == 4 ? splitted[3] : null));
 			}
 
 		} catch (FileNotFoundException e) {
