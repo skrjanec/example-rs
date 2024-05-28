@@ -121,6 +121,97 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"matchId\":\"sr:match:14198799\",\r\n    \"marketId\": 218,\r\n    \"outcome\": \"5\",\r\n    \"specifiers\":\"setnr=2|gamenr=6|pointnr=1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process data from file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"matchId\":\"sr:match:14198799\",\r\n    \"marketId\": 218,\r\n    \"outcome\": \"5\",\r\n    \"specifiers\":\"setnr=2|gamenr=6|pointnr=1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/data/process",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"data",
+						"process"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

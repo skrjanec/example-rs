@@ -22,4 +22,9 @@ public class DataService {
             em.persist(data);
         }
     }
+    
+    @Transactional
+    public void process() {
+        
+    }
 }

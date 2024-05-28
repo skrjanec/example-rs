@@ -30,6 +30,14 @@ public class DataResource {
 	@POST
     public Response addData(Data data) {
 		dataBean.saveData(data);
+		// TODO: return id
+        return Response.noContent().build();
+    }
+	
+	@POST
+	@Path("process")
+    public Response process() {
+		dataBean.process();
         return Response.noContent().build();
     }
 }
